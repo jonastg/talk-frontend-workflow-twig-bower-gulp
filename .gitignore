@@ -1,0 +1,6 @@
+sculpin.phar
+/.sculpin
+/output_*
+/source/components
+/bower_components
+/node_modules

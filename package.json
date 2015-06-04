@@ -1,0 +1,28 @@
+{
+  "name": "phpvalenciademo",
+  "version": "1.0.0",
+  "description": "mimovistar_cms ==============",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uglifycss": "^1.0.4",
+    "gulp-if": "^1.2.5",
+    "gulp-sass": "^2.0.1",
+    "gulp-image-resize": "^0.6.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://manuel_lopez_torrent@bitbucket.org/manuel_lopez_torrent/mimovistar_cms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/manuel_lopez_torrent/mimovistar_cms#readme"
+}

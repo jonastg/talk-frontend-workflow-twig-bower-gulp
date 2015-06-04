@@ -1,0 +1,12 @@
+{
+  "name": "phpvalenciademo",
+  "version": "1.0.0",
+  "authors": [
+    "Manel <malotor@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.4"
+  }
+}
