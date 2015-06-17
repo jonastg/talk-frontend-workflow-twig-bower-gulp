@@ -2,11 +2,12 @@
   "name": "phpvalenciademo",
   "version": "1.0.0",
   "authors": [
-    "Manel <malotor@gmail.com>"
+    "Manel <malotor@gmail.com>",
+    "jonastg <jonastg@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "~3.3.4",
-    "jquery": "~2.1.4"
+    "jquery": "2.1.x",
+    "bootstrap-sass": "~3.3.5"
   }
 }

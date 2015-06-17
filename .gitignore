@@ -6,4 +6,5 @@ sculpin.phar
 /source/img
 /source/js
 /bower_components
+/assets/vendor/bower_components
 /node_modules
