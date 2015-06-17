@@ -43,12 +43,12 @@ gulp.task('sass:watch', function () {
 //IMAGE TASK: Just pipe images from project folder to public web folder
 gulp.task('img', function() {
     return gulp.src('assets/img/**/*.*')
-        .pipe(imageResize({
+        /*.pipe(imageResize({
             width : 600,
             height : 400,
             crop : true,
             upscale : false
-        }))
+        }))*/
         .pipe(gulp.dest('source/img'));
 });
 

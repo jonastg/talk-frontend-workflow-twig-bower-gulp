@@ -1,7 +1,7 @@
 {
-    "name": "malotor/phpvalencia_demo",
-    "description": "PHPValencia demo",
-    "type": "module",
+    "name": "malotor/php-valencia",
+    "description": "PHPValencia",
+    "type": "sculpin-skeleton",
     "license": "MIT",
     "authors": [
         {
@@ -10,9 +10,13 @@
             "homepage": "http://develclub.es"
         },
         {
-            "name": "Jonás",
-            "email": "",
-            "homepage": ""
+            "name": "Jonas Talavera"
         }
-    ]
+    ],
+    "require": {
+        
+    },
+    "config": {
+        "component-dir": "source/components"
+    }
 }
