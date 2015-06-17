@@ -1,26 +1,18 @@
 {
-    "name": "sculpin/blog-skeleton",
-    "description": "A Skeleton for a Sculpin Based Blog",
-    "type": "sculpin-skeleton",
+    "name": "malotor/phpvalencia_demo",
+    "description": "PHPValencia demo",
+    "type": "module",
     "license": "MIT",
     "authors": [
         {
-            "name": "Dragonfly Development Inc.",
-            "email": "info@dflydev.com",
-            "homepage": "http://dflydev.com"
+            "name": "Manel López Torrent",
+            "email": "malotor@gmail.com",
+            "homepage": "http://develclub.es"
         },
         {
-            "name": "Beau Simensen",
-            "email": "beau@dflydev.com",
-            "homepage": "http://beausimensen.com"
+            "name": "Jonás",
+            "email": "",
+            "homepage": ""
         }
-    ],
-    "require": {
-        "components/bootstrap": "~2.3.1",
-        "components/jquery": "~1.9.1",
-        "components/highlightjs": "~7.3.0"
-    },
-    "config": {
-        "component-dir": "source/components"
-    }
+    ]
 }

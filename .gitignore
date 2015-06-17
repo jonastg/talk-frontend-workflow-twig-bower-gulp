@@ -2,5 +2,8 @@ sculpin.phar
 /.sculpin
 /output_*
 /source/components
+/source/css
+/source/img
+/source/js
 /bower_components
 /node_modules
