@@ -10,11 +10,12 @@
             "homepage": "http://develclub.es"
         },
         {
-            "name": "Jonas Talavera"
+            "name": "Jonas Talavera",
+            "email": "jonastg@gmail.com"
         }
     ],
     "require": {
-        
+
     },
     "config": {
         "component-dir": "source/components"
