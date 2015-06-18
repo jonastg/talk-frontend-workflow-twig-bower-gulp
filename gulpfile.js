@@ -1,11 +1,13 @@
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var uglify = require('gulp-uglify');
-var uglifycss = require('gulp-uglifycss');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var imageResize = require('gulp-image-resize');
+var autoprefixer = require('gulp-autoprefixer'),
+    gulp         = require('gulp'),
+    gulpif       = require('gulp-if'),
+    uglify       = require('gulp-uglify'),
+    uglifycss    = require('gulp-uglifycss'),
+    sass         = require('gulp-sass'),
+    concat       = require('gulp-concat'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    imageResize  = require('gulp-image-resize');
+
 var env = process.env.GULP_ENV;
 
 //JAVASCRIPT TASK: write one minified js file out of jquery.js, bootstrap.js and all of my custom js files
@@ -27,7 +29,7 @@ gulp.task('sass', function () {
             outputStyle:    'expanded',
             sourceComments: true
         }))
-        //.pipe(autoprefixer({browsers: ['last 3 version', 'ie >= 10']}))
+        .pipe(autoprefixer({browsers: ['last 3 version', 'ie >= 10']}))
         .pipe(gulp.dest('source/css'));
 });
 
