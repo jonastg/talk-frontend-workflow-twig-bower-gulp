@@ -7,6 +7,7 @@ var autoprefixer = require('gulp-autoprefixer'),
     jshint       = require('gulp-jshint'),
     concat       = require('gulp-concat'),
     sourcemaps   = require('gulp-sourcemaps'),
+    scsslint     = require('gulp-scss-lint'),
     imageResize  = require('gulp-image-resize');
 
 var env = process.env.GULP_ENV;
@@ -39,6 +40,13 @@ gulp.task('sass', function () {
         .pipe(autoprefixer({browsers: ['last 3 version', 'ie >= 10']}))
         .pipe(gulp.dest('source/css'));
 });
+
+gulp.task('sass:lint', function() {
+  gulp.src(['assets/sass/**/*.scss'])
+    .pipe(scsslint({
+        config: 'app/config/scss-lint.yml'
+    }));
+})
 
 /*gulp.task('css', function () {
     return gulp.src([
@@ -73,4 +81,4 @@ gulp.task('img', function() {
 });
 
 //define executable tasks when running "gulp" command
-gulp.task('default', ['js', 'js:jshint', 'sass', 'img', 'sass:watch']);
+gulp.task('default', ['js', 'js:jshint', 'sass', 'sass:lint', 'img', 'sass:watch']);

@@ -17,3 +17,5 @@ $ npm install
 $ sculpin generate --watch --server
 $ gulp
 ```
+
+Para usar [scss-lint](https://github.com/brigade/scss-lint) es necesario instalar la gema de ruby scss_lint mediante `https://github.com/brigade/scss-lint`. Para ello hay que tener instalado [ruby](https://www.ruby-lang.org/en/documentation/installation/). 
