@@ -64,4 +64,4 @@ gulp.task('img', function() {
 });
 
 //define executable tasks when running "gulp" command
-gulp.task('default', ['js', 'sass', 'sass:watch']);
+gulp.task('default', ['js', 'sass', 'img', 'sass:watch']);
