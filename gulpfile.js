@@ -4,6 +4,7 @@ var autoprefixer = require('gulp-autoprefixer'),
     uglify       = require('gulp-uglify'),
     uglifycss    = require('gulp-uglifycss'),
     sass         = require('gulp-sass'),
+    jshint       = require('gulp-jshint'),
     concat       = require('gulp-concat'),
     sourcemaps   = require('gulp-sourcemaps'),
     imageResize  = require('gulp-image-resize');
@@ -20,6 +21,12 @@ gulp.task('js', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('source/js'));
 });
+
+gulp.task('js:jshint', function () {
+    return gulp.src(['assets/js/**/*.js'])
+        .pipe(jshint('app/config/dev.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish', { verbose: true }));
+})
 
 //CSS TASK: write one minified css file out of bootstrap.less and all of my custom less files
 gulp.task('sass', function () {
@@ -66,4 +73,4 @@ gulp.task('img', function() {
 });
 
 //define executable tasks when running "gulp" command
-gulp.task('default', ['js', 'sass', 'img', 'sass:watch']);
+gulp.task('default', ['js', 'js:jshint', 'sass', 'img', 'sass:watch']);

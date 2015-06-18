@@ -1,8 +1,8 @@
-(function(window, document, $, undefined) {
-    'use strict';
+(function ( window, document, $, undefined ) {
+    "use strict";
 
-    $(document).on('ready', function() {
+    $(document).on("ready", function() {
         console.log("Javascript loaded");
     });
 
-})(window, document, jQuery);
+}) ( window, document, jQuery );
