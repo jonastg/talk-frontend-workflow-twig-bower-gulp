@@ -1,7 +1,7 @@
 {
-  "name": "phpvalenciademo",
-  "version": "1.0.0",
-  "description": "mimovistar_cms ==============",
+  "name": "PHPValencia",
+  "version": "0.0.1",
+  "description": "PHPValencia",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
@@ -20,9 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://manuel_lopez_torrent@bitbucket.org/manuel_lopez_torrent/mimovistar_cms.git"
+    "url": "https://github.com/malotor/phpvalencia_demo.git"
   },
   "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/manuel_lopez_torrent/mimovistar_cms#readme"
+  "license": "MIT",
+  "homepage": "https://github.com/malotor/phpvalencia_demo"
 }
