@@ -9,7 +9,9 @@ var autoprefixer = require('gulp-autoprefixer'),
     sourcemaps   = require('gulp-sourcemaps'),
     scsslint     = require('gulp-scss-lint'),
     imageResize  = require('gulp-image-resize'),
-    shell        = require('gulp-shell');
+    shell        = require('gulp-shell'),
+    runSequence  = require('run-sequence'),
+    notify       = require('gulp-notify');
 
 var env = process.env.GULP_ENV;
 
@@ -74,3 +76,16 @@ gulp.task('server', function () {
 
 //define executable tasks when running "gulp" command
 gulp.task('default', ['js', 'js:jshint', 'sass', 'sass:lint', 'img', 'sass:watch']);
+
+gulp.task('dev', function() {
+    runSequence (
+        ['js', 'js:jshint', 'sass', 'sass:lint', 'img', 'sass:watch'],
+        ['server'],
+        function () {
+            gulp.src('').pipe(notify({
+                title: 'Development',
+                message: 'Built task done, now watching for changes...'
+            }));
+        }
+    );
+})
