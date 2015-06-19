@@ -8,7 +8,8 @@ var autoprefixer = require('gulp-autoprefixer'),
     concat       = require('gulp-concat'),
     sourcemaps   = require('gulp-sourcemaps'),
     scsslint     = require('gulp-scss-lint'),
-    imageResize  = require('gulp-image-resize');
+    imageResize  = require('gulp-image-resize'),
+    shell        = require('gulp-shell');
 
 var env = process.env.GULP_ENV;
 
@@ -38,6 +39,8 @@ gulp.task('sass', function () {
             sourceComments: true
         }))
         .pipe(autoprefixer({browsers: ['last 3 version', 'ie >= 10']}))
+        .pipe(gulpif(env === 'prod', uglifycss()))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('source/css'));
 });
 
@@ -48,22 +51,6 @@ gulp.task('sass:lint', function() {
     }));
 })
 
-/*gulp.task('css', function () {
-    return gulp.src([
-        'bower_components/bootstrap/dist/css/bootstrap.css',
-        'assets/sass/ ** /*.scss'])
-        .pipe(gulpif('*.scss',
-            sass({
-                outputStyle: 'nested', // libsass doesn't support expanded yet
-                precision: 10,
-                includePaths: ['.']
-            })
-        ))
-        .pipe(concat('styles.css'))
-        .pipe(gulpif(env === 'prod', uglifycss()))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('source/css'));
-});*/
 gulp.task('sass:watch', function () {
     gulp.watch('assets/sass/**/*.scss', ['sass']);
 });
@@ -78,6 +65,11 @@ gulp.task('img', function() {
             upscale : false
         }))*/
         .pipe(gulp.dest('source/img'));
+});
+
+gulp.task('server', function () {
+  return gulp.src('', {read: false})
+      .pipe(shell(['sculpin generate --watch --server']));
 });
 
 //define executable tasks when running "gulp" command
