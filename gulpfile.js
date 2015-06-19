@@ -11,7 +11,8 @@ var autoprefixer = require('gulp-autoprefixer'),
     imageResize  = require('gulp-image-resize'),
     shell        = require('gulp-shell'),
     runSequence  = require('run-sequence'),
-    notify       = require('gulp-notify');
+    notify       = require('gulp-notify'),
+    karma        = require('gulp-karma');
 
 var env = process.env.GULP_ENV;
 
@@ -71,7 +72,7 @@ gulp.task('img', function() {
 
 gulp.task('server', function () {
   return gulp.src('', {read: false})
-      .pipe(shell(['sculpin generate --watch --server']));
+      .pipe(shell(['sculpin generate --server']));
 });
 
 //define executable tasks when running "gulp" command
@@ -88,4 +89,21 @@ gulp.task('dev', function() {
             }));
         }
     );
-})
+});
+
+gulp.task('test', function() {
+  return gulp.src('test/specs/**.js')
+    .pipe(karma({
+      configFile: 'app/config/karma.conf.js',
+      action: 'watch'
+    }));
+});
+
+gulp.task('test:inbrowser', function() {
+  return gulp.src('test/specs/**.js')
+    .pipe(karma({
+      configFile: 'app/config/karma.conf.js',
+      action: 'run',
+      browsers: ['Chrome', 'Firefox', 'PhantomJS']
+    }));
+});
