@@ -81,7 +81,7 @@ gulp.task('default', ['js', 'js:jshint', 'sass', 'sass:lint', 'img', 'sass:watch
 gulp.task('dev', function() {
     runSequence (
         ['js', 'js:jshint', 'sass', 'sass:lint', 'img', 'sass:watch'],
-        ['server'],
+        ['server', 'test'],
         function () {
             gulp.src('').pipe(notify({
                 title: 'Development',
